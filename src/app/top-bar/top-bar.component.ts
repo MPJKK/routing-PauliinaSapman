@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
+  navLinks = [
+      {
+        path: '',
+        label: 'Setup',
+      },
+      {
+        path: 'routes',
+        label: 'Routes',
+      }
+  ]
+
   constructor() { }
 
   ngOnInit() {

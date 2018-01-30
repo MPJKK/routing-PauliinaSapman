@@ -13,6 +13,12 @@ import {HttpClientModule} from '@angular/common/http';
 import {DigitransitService} from './services/digitransit.service';
 import {FormsModule} from '@angular/forms';
 import { RouteDirectionPipe } from './pipes/route-direction.pipe';
+import { RouteColorPipe } from './pipes/route-color.pipe';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatTabsModule} from '@angular/material';
 
 
 @NgModule({
@@ -21,7 +27,8 @@ import { RouteDirectionPipe } from './pipes/route-direction.pipe';
     TopBarComponent,
     SetupComponent,
     RoutesComponent,
-    RouteDirectionPipe
+    RouteDirectionPipe,
+    RouteColorPipe
   ],
   imports: [
     BrowserModule,
@@ -30,9 +37,17 @@ import { RouteDirectionPipe } from './pipes/route-direction.pipe';
       FormsModule,
       AgmCoreModule.forRoot({
           apiKey: 'AIzaSyAxVeP4eBhU2lZmGN_6Oxizxoahl1W7pcY '
-      })
+      }),
+      BrowserAnimationsModule,
+      FlexLayoutModule,
+      MatTabsModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatButtonModule,
   ],
   providers: [DigitransitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

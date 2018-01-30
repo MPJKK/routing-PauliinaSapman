@@ -3,16 +3,21 @@
     {{ pysakki.name }}
 </h2>
 
-<agm-map [latitude]="pysakki.lat" [longitude]="pysakki.lon" [zoom]="16">
-    <agm-marker [latitude]="pysakki.lat" [longitude]="pysakki.lon"></agm-marker>
-</agm-map>
-
-<ul>
-    <li *ngFor="let reitti of pysakki.patterns">
-        <h4>{{reitti.name}}</h4>
-        <p>{{reitti.route.longName}}</p>
-        <!-- {{ lon }}
-         {{ lat }} -->
-     </li>
- </ul>
+<div fxLayout="row">
+    <div fxFlex>
+        <ul>
+            <li *ngFor="let reitti of pysakki.patterns">
+                <h4>{{reitti.name}}</h4>
+                <p><span [class]="reitti.directionId | routeColor">{{reitti.directionId | routeDirection}}</span>{{reitti.route.longName}}</p>
+                    <!-- {{ lon }}
+                      {{ lat }} -->
+            </li>
+        </ul>
+    </div>
+    <div fxFlex>
+        <agm-map [latitude]="pysakki.lat" [longitude]="pysakki.lon" [zoom]="16">
+            <agm-marker [latitude]="pysakki.lat" [longitude]="pysakki.lon"></agm-marker>
+        </agm-map>
+    </div>
+</div>
 </article>
