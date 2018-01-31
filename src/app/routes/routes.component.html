@@ -1,20 +1,19 @@
 <article *ngFor="let pysakki of reittiTaulukko">
-<h2>
+<h1 class="mat-title">
     {{ pysakki.name }}
-</h2>
+</h1>
 
 <div fxLayout="row">
     <div fxFlex>
         <ul>
-            <li *ngFor="let reitti of pysakki.patterns">
-                <h4>{{reitti.name}}</h4>
-                <p><span [class]="reitti.directionId | routeColor">{{reitti.directionId | routeDirection}}</span>{{reitti.route.longName}}</p>
-                    <!-- {{ lon }}
-                      {{ lat }} -->
-            </li>
+            <mat-list *ngFor="let reitti of pysakki.patterns">
+                <mat-list-item><mat-icon matListIcon>directions_bus</mat-icon>{{reitti.name}}</mat-list-item>
+                <p matLine><span [class]="reitti.directionId | routeColor">{{reitti.directionId | routeDirection}}</span>{{reitti.route.longName}}</p>
+                <mat-divider></mat-divider>
+            </mat-list>
         </ul>
     </div>
-    <div fxFlex>
+    <div fxFlex class="img-rounded">
         <agm-map [latitude]="pysakki.lat" [longitude]="pysakki.lon" [zoom]="16">
             <agm-marker [latitude]="pysakki.lat" [longitude]="pysakki.lon"></agm-marker>
         </agm-map>

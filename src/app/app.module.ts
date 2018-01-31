@@ -18,7 +18,10 @@ import { RouteColorPipe } from './pipes/route-color.pipe';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatTabsModule} from '@angular/material';
+import {
+    MatButtonModule, MatDividerModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule,
+    MatTabsModule
+} from '@angular/material';
 
 
 @NgModule({
@@ -44,6 +47,9 @@ import {MatButtonModule, MatFormFieldModule, MatInputModule, MatTabsModule} from
       MatFormFieldModule,
       MatInputModule,
       MatButtonModule,
+      MatListModule,
+      MatIconModule,
+      MatDividerModule
   ],
   providers: [DigitransitService],
   bootstrap: [AppComponent]
