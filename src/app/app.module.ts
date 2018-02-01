@@ -19,7 +19,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
-    MatButtonModule, MatDividerModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule,
+    MatButtonModule, MatDividerModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule,
     MatTabsModule
 } from '@angular/material';
 
@@ -49,7 +49,8 @@ import {
       MatButtonModule,
       MatListModule,
       MatIconModule,
-      MatDividerModule
+      MatDividerModule,
+      MatExpansionModule
   ],
   providers: [DigitransitService],
   bootstrap: [AppComponent]

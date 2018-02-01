@@ -1,14 +1,19 @@
 <article *ngFor="let pysakki of reittiTaulukko">
-<h1 class="mat-title">
-    {{ pysakki.name }}
-</h1>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+        <h1 class="mat-title">
+            {{ pysakki.name }} {{ pysakki.code }}
+        </h1>
+        </mat-panel-title>
+    </mat-expansion-panel-header>
 
 <div fxLayout="row">
     <div fxFlex>
         <ul>
             <mat-list *ngFor="let reitti of pysakki.patterns">
                 <mat-list-item><mat-icon matListIcon>directions_bus</mat-icon>{{reitti.name}}</mat-list-item>
-                <p matLine><span [class]="reitti.directionId | routeColor">{{reitti.directionId | routeDirection}}</span>{{reitti.route.longName}}</p>
+                <mat-list-item><span [class]="reitti.directionId | routeColor">{{reitti.directionId | routeDirection}}</span> {{reitti.route.longName}}</mat-list-item>
                 <mat-divider></mat-divider>
             </mat-list>
         </ul>
@@ -19,4 +24,5 @@
         </agm-map>
     </div>
 </div>
+</mat-expansion-panel>
 </article>

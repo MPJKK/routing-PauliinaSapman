@@ -5,7 +5,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class DigitransitService {
 
     apiUrl = 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql';
-    pysakki = 'Gransinmäki';
+    pysakki = 'Kamppi';
 
     constructor(private http: HttpClient) {
     }
@@ -16,6 +16,7 @@ export class DigitransitService {
     name
     lat
     lon
+    code
     patterns {
       id
       name
